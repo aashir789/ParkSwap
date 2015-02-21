@@ -1,8 +1,4 @@
-$(document).ready(function () {
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* google */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+var map = null;
 function initialize() {
     var map_canvas = document.getElementById('googleMap');
 
@@ -12,8 +8,9 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
     };
-
-    var map = new google.maps.Map(map_canvas, map_options);
+    
+    map = new google.maps.Map(map_canvas, map_options);
+    
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(44.434596, 26.080533),
         map: map,
@@ -87,7 +84,36 @@ function initialize() {
     ]
     map.setOptions({styles: styles});
 }
+
+function addMarker(){
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map,
+        title: 'Hello World!'
+    });
+}
+/*
+$(document).ready(function () {
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* google */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var map_canvas = document.getElementById('googleMap');
+
+var map_options = {
+    center: new google.maps.LatLng(44.434596, 26.080533),
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    scrollwheel: false
+};
+
+var map = new google.maps.Map(map_canvas, map_options);
+
+
+
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
 });
+*/
