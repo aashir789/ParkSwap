@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <style>
+  #googleMap {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src='static/ParkSwap/js/googleMapInit.js'></script>
+
+  <style>
+    #input h2 {
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    #input .inputs {
+      width: 100%;
+    }
+    #input .form-control-wrapper {
+      margin: 30px 0;
+    }
+
+    .centerForm {
+      width: 50%;
+      margin: 0 auto;
+    }
+  </style>
+
+
+</head>
+
+
+
+<body onload="initialize()">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">ParkSwap </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <h2 class="jumbotron text-center">
+        Sign Up
+        {% block jumbo %}{% endblock %}
+      </h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="centerForm">
+      <div class="well page active" id="input" style="display: block;">
+        <h2>User Info</h2>
+        <div class="inputs">
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="User Name">
+            <span class="material-input"></span>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Password">
+            <span class="material-input"></span>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Confirm Password">
+            <span class="material-input"></span>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Email">
+            <span class="material-input"></span>
+          </div>
+          <h2>Credit Card Info</h2>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Credit Card Number">
+            <span class="material-input"></span>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Credit Card Security Code">
+            <span class="material-input"></span>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="text" class="form-control" placeholder="Credit Card Expiration Date">
+            <span class="material-input"></span>
+          </div>
+          <div class="text-center">
+            <a href="javascript:void(0)" class="btn btn-info text-center">Sign Up!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
+</body>
+</html>
