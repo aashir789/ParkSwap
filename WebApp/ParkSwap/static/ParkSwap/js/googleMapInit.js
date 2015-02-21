@@ -85,13 +85,19 @@ function addMarker(){
     var marker = new google.maps.Marker({
         position: map.getCenter(),
         map: map,
-	var iw = new google.maps.InfoWindow({
-	    content: "Home For Sale"
-	});
-	google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });
+	
         
     });
+
+    var iw = new google.maps.InfoWindow({
+	content: "Home For Sale"
+    });
+    google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });
+    
+    
 }
+
+
 /*
 $(document).ready(function () {
 
