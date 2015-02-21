@@ -8,9 +8,9 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
     };
-    
+
     map = new google.maps.Map(map_canvas, map_options);
-    
+
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(44.434596, 26.080533),
         map: map,

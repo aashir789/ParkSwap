@@ -4,6 +4,8 @@
     {% load staticfiles %}
     <meta charset="utf-8">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -16,19 +18,19 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src='static/ParkSwap/js/googleMapInit.js'></script>
-    
+
   </head>
-  
-  <div class="container-fluid">
-    <h2 class="jumbotron text-center">
-      ParkSwap
-      {% block jumbo %}{% endblock %}
-    </h2>
-  </div>
-  
-  
+
+
+
   <body onload="initialize()">
-    
+    <div class="container-fluid">
+      <h2 class="jumbotron text-center">
+        ParkSwap
+        {% block jumbo %}{% endblock %}
+      </h2>
+    </div>
+
     <div class="container">
       <div class="text-center">
 	{% block content %}{% endblock %}
@@ -38,5 +40,7 @@
      <section id="googleMap"></section>
      <button type="button" onclick="addMarker()">Add Marker</button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
   </body>
 </html>
