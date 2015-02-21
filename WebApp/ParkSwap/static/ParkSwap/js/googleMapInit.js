@@ -77,13 +77,19 @@ function initialize() {
         }
     ]
     map.setOptions({styles: styles});
+
+
 }
 
 function addMarker(){
     var marker = new google.maps.Marker({
         position: map.getCenter(),
         map: map,
-        title: 'Hello World!'
+	var iw = new google.maps.InfoWindow({
+	    content: "Home For Sale"
+	});
+	google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });
+        
     });
 }
 /*
