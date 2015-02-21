@@ -1,9 +1,12 @@
 var map = null;
+var lat = 44.434596;
+var lng = 26.080533;
+var randomMultiplier = 20;
 function initialize() {
     var map_canvas = document.getElementById('googleMap');
 
     var map_options = {
-        center: new google.maps.LatLng(44.434596, 26.080533),
+        center: new google.maps.LatLng(lat, lng),
         zoom: 16,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
@@ -11,11 +14,6 @@ function initialize() {
 
     map = new google.maps.Map(map_canvas, map_options);
 
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(44.434596, 26.080533),
-        map: map,
-        title: 'Hello World!'
-    });
     var styles = [
         {
             "featureType": "landscape",
@@ -78,23 +76,55 @@ function initialize() {
     ]
     map.setOptions({styles: styles});
 
+    for (var i = 0; i < 20; i++) {
+        var randomAddonLat = (Math.random() - 0.5) / 80;
+        var randomAddonLng = (Math.random() - 0.5) / 80;
+        laglng = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
+        addStaticMarker(laglng, "Aashir");
+    };
+
+
 
 }
 
-function addMarker(){
+function addStaticMarker(laglng, name){
+    if (!laglng) {
+        laglng = map.getCenter();
+    }
     var marker = new google.maps.Marker({
-        position: map.getCenter(),
-        map: map,
-	
-        
+        position: laglng,
+        map: map
+    });
+
+    var content = '<p>' + name + ' has a free spot here in ' + Math.floor(Math.random() * 10) + ' minute(s).</p>' +
+    '<a href="javascript:void(0)">Call ' + name + '</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' +
+    '<a href="javascript:void(0)">Text ' + name + '</a>';
+
+
+    var iw = new google.maps.InfoWindow({
+       content: content
+    });
+    google.maps.event.addListener(marker, "click", function (e) {
+        iw.open(map, marker);
+    });
+}
+
+
+function addMarker(laglng, name){
+    if (!laglng) {
+        laglng = map.getCenter();
+    }
+    var marker = new google.maps.Marker({
+        position: laglng,
+        map: map
     });
 
     var iw = new google.maps.InfoWindow({
-	content: "Home For Sale"
+	   content: (name + " has a free spot here in " + Math.floor(Math.random() * 10) + " minute(s).")
     });
     google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });
-    
-    
+
+
 }
 
 
