@@ -24,3 +24,7 @@ def home(request):
 
 def logged_in(request):
     return render(request, 'ParkSwap/logged-in-home.html',{})
+
+
+def wait(request):
+    return render(request, 'ParkSwap/waitfornewparker.html',{})
