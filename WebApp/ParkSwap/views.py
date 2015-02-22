@@ -26,6 +26,7 @@ def home(request):
 def search(request):
     return render(request, 'ParkSwap/search.html',{})
 
+    
 
 
 def wait(request):

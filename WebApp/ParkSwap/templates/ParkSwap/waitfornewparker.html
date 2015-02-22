@@ -64,9 +64,11 @@
 
 
     <style>
-      #waitingform{
+      #waitingform,#thankyou{
       background-color: rgba(256,256,256,0.8);
+      text: center;
       }
+      
     </style>
 
 
@@ -74,16 +76,38 @@
     <div class="col-md-4 col-xs-1"></div>
     <div class="col-md-4 col-xs-10" id="waitingform">
       <b>
-      <div>
-	Location rate : $0.50/min
-	<input type="number" class="form-control floating-label text-center" placeholder="minutes willing to wait"></input>
-	<button onclick="addMarker(map.getCenter(),'logged_in_user')" class="btn btn-inverse">Wait</button>
-      </div>
+       	  <br/>
+	  Location rate : $0.50/min
+	  <div class="form-control-wrapper">
+	    <input type="number" class="form-control text-center" placeholder="minutes willing to wait"></input>
+	    <span class="material-input"></span>
+	  </div>
+	  <button onclick="markSpot() " class="btn btn-inverse">Wait</button>
       </b>
     </div>
+   
+    <div class="col-md-4 col-xs-10 text-center" id="thankyou" hidden>
+      <b>
+       	<br/><h2>
+	Thanks for holding a spot ! :)
+	<br/>
+	You will be notified if someone wants this spot.
+	<br/>
+	</h2>
+      </b>
+    </div>
+    
+    
     <div class="col-md-4 col-xs-1"></div>
     
-    
+
+    <script>
+      function markSpot(){
+      addMarker(map.getCenter(),"Adam");
+      $("#waitingform").hide();
+      $("#thankyou").show();
+      }
+    </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
