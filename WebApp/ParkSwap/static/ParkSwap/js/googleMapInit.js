@@ -94,7 +94,8 @@ function addStaticMarker(laglng, name){
     var marker = new google.maps.Marker({
         position: laglng,
         map: map,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        icon: "static/ParkSwap/images/markerPrice2.gif"
     });
 
     var content = '<p>' + name + ' has a free spot here in ' + Math.floor(Math.random() * 10) + ' minute(s).</p>' +
