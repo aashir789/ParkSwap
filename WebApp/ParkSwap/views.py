@@ -33,3 +33,5 @@ def wait(request):
 def sign_up(request):
     return render(request, 'ParkSwap/sign-up.html',{})
 
+def no_signup_home(request):
+    return render(request, 'ParkSwap/no-sign-up-home.html', {})
