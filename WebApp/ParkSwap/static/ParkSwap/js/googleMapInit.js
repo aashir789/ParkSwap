@@ -2,6 +2,7 @@ var map = null;
 var lat = 40.769723;
 var lng = -73.963051;
 var randomMultiplier = 20;
+var markersArr = [];
 
 function initialize() {
     var map_canvas = document.getElementById('googleMap');
@@ -81,16 +82,9 @@ function initialize() {
         var randomAddonLat = (Math.random() - 0.5) / 80;
         var randomAddonLng = (Math.random() - 0.5) / 80;
         laglng = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
-        addStaticMarker(laglng, "Aashir");
+        var marker = addStaticMarker(laglng, "Aashir");
+        markersArr.push(marker);
     };
-
-
-    var iw = new google.maps.InfoWindow({
-       content: content
-    });
-    google.maps.event.addListener(marker, "click", function (e) {
-        iw.open(map, marker);
-    });
 }
 
 function addStaticMarker(laglng, name){
@@ -116,6 +110,8 @@ function addStaticMarker(laglng, name){
     google.maps.event.addListener(marker, "click", function (e) {
         iw.open(map, marker);
     });
+
+    return marker;
 }
 
 
@@ -234,7 +230,7 @@ function initializeAccepted() {
 
     var randomAddonLat = (Math.random() - 0.5) / 80;
     var randomAddonLng = (Math.random() - 0.5) / 80;
-    
+
     var laglng1 = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
     addMarker(laglng1, "Aashir");
 
