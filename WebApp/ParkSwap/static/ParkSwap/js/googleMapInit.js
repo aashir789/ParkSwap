@@ -144,12 +144,13 @@ function addCarMarker(laglng, name){
     var marker = new google.maps.Marker({
         position: laglng,
         map: map,
+        animation: google.maps.Animation.DROP,
         icon: "static/ParkSwap/images/car.png"
     });
 
     var iw = new google.maps.InfoWindow({
 
-       content: (name + " has a free spot here in " + Math.floor(Math.random() * 10) + " minute(s).")
+       content: (name + " will arrive in " + Math.floor(Math.random() * 10) + " minute(s).")
     });
     google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });
 
@@ -234,15 +235,42 @@ function initializeAccepted() {
     var randomAddonLat = (Math.random() - 0.5) / 80;
     var randomAddonLng = (Math.random() - 0.5) / 80;
     
-    laglng = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
-    addStaticMarker(laglng, "Aashir");
+    var laglng1 = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
+    addStaticMarker(laglng1, "Aashir");
 
-    randomAddonLat = (Math.random() - 0.5) / 80;
-    randomAddonLng = (Math.random() - 0.5) / 80;
-    laglng = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
-    addCarMarker(laglng, "Aashir");
+    var laglng2 = new google.maps.LatLng(lat, lng);
+    addCarMarker(laglng2, "Aashir");
+
+    var path = new google.maps.MVCArray();
+
+    //Intialize the Direction Service
+    var service = new google.maps.DirectionsService();
+
+    //Set the Path Stroke Color
+    var poly = new google.maps.Polyline({
+      map: map,
+      strokeWeight: 6,
+      strokeColor: '#4986E7'
+    });
+
+    var src = laglng1;
+    var des = laglng2;
+    // path.push(src);
+    poly.setPath(path);
+    service.route({
+      origin: src,
+      destination: des,
+      travelMode: google.maps.DirectionsTravelMode.DRIVING
+    }, function(result, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        for (var i = 0, len = result.routes[0].overview_path.length; i < len; i++) {
+          path.push(result.routes[0].overview_path[i]);
+        }
+      }
+    });
 
 
+    var content = "hello world";
     var iw = new google.maps.InfoWindow({
        content: content
     });
