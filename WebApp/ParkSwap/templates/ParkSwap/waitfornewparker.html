@@ -24,7 +24,7 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src='static/ParkSwap/js/googleMapInit.js'></script>
+    <script src="static/ParkSwap/js/googleMapInit.js"></script>
     
   </head>
   
@@ -60,20 +60,28 @@
       <section id="googleMap"></section>
     </div>
 
-    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/>
+
+
+    <style>
+      #waitingform{
+      background-color: rgba(256,256,256,0.8);
+      }
+    </style>
+
+
     
     <div class="col-md-4 col-xs-1"></div>
-    <div class="col-md-4 col-xs-10">
-      <div class="list-group-item">
+    <div class="col-md-4 col-xs-10" id="waitingform">
+      <b>
+      <div>
 	Location rate : $0.50/min
-	<form>
-	  <input type="number" class="form-control floating-label text-center" placeholder="minutes willing to wait"></input>
-	  <button type="submit" class="btn btn-inverse">Wait</button>
-	</form>
-    </div>
+	<input type="number" class="form-control floating-label text-center" placeholder="minutes willing to wait"></input>
+	<button onclick="addMarker(map.getCenter(),'logged_in_user')" class="btn btn-inverse">Wait</button>
+      </div>
+      </b>
     </div>
     <div class="col-md-4 col-xs-1"></div>
-    
     
     
     
