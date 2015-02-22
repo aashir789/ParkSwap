@@ -18,10 +18,13 @@ body {
     background-size: cover;
 }
 
-/*@media screen and (max-device-width: 800px) {
-    #no-sign-up-home {
-        background: url(../ParkSwap/images/uber-front.jpg) #000 no-repeat center center fixed;
-        background-size: cover;
+#no-sign-up-logo {
+    font-size: 80px;
+}
+
+@media screen and (max-device-width: 800px) {
+    #no-sign-up-logo {
+        font-size: 40px;
     }
 }
-*/
+
