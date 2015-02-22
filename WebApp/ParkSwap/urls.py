@@ -6,6 +6,8 @@ urlpatterns = patterns('',
 
     url(r'^wait$', 'ParkSwap.views.wait', name='wait'),
 
-    url(r'^sign-up$', 'ParkSwap.views.sign_up', name='signedup')
+    url(r'^sign-up$', 'ParkSwap.views.sign_up', name='signedup'),
+
+    url(r'^accepted-parking$', 'ParkSwap.views.accepted_parking', name='acceptedparking')
 
 )

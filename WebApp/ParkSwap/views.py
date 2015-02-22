@@ -33,3 +33,6 @@ def wait(request):
 def sign_up(request):
     return render(request, 'ParkSwap/sign-up.html',{})
 
+def accepted_parking(request):
+    return render(request, 'ParkSwap/acceptedparking.html',{})
+
