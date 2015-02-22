@@ -42,11 +42,14 @@
   </style>
 
 
+  <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
+
+
 </head>
 
 
 
-<body onload="initialize()">
+<body onload="initialize()" id="no-sign-up-home">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -62,9 +65,9 @@
     </div>
   </nav>
 
-  <div class="jumbotron">
+  <div class="jumbotron" style="background-color:rgba(256,256,256,0.5)">
     <div class="container-fluid">
-      <h2 class="jumbotron text-center">
+      <h2 class="text-center">
         Sign Up
         {% block jumbo %}{% endblock %}
       </h2>
@@ -72,8 +75,8 @@
   </div>
 
   <div class="container">
-    <div class="centerForm">
-      <div class="well page active" id="input" style="display: block;">
+    <div class="centerForm" style="background-color:rgba(256,256,256,0.5)">
+      <div class="well page active" id="input" style="display: block; background-color:rgba(256,256,256,0.5)">
         <h2>User Info</h2>
         <div class="inputs">
           <div class="form-control-wrapper">
