@@ -15,8 +15,12 @@
   <style>
     #googleMap {
     width: 100%;
-    height: 350px;
-    overflow: hidden;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    z-index: 0;
+    top: 0; 
+    bottom: 0; 
     }
   </style>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -47,8 +51,9 @@
     <div class="container-fluid">
       <h2 class="jumbotron text-center">
         ParkSwap
-	
       </h2>
+      
+      <br/>
     </div>
   </div>
   
@@ -60,8 +65,39 @@
     <div class="text-center">
       
     </div>
-    <section id="googleMap"></section>
+    <section id="googleMap">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+	<div class="list-group-item">
+	  Location rate : $0.50/min <br/>
+	  <form>
+	    <input type="number" class="form-control floating-label" placeholder="minutes willing to wait"></input>
+	    <button type="submit" class="btn btn-default">
+	      Wait
+	    </button>
+	  </form>
+	</div>
+      </div>
+      <div class="col-md-4"></div>
+      
+    </section>
   </div>
+
+
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+	<div class="list-group-item">
+	  Location rate : $0.50/min <br/>
+	  <form>
+	    <input type="number" class="form-control floating-label" placeholder="minutes willing to wait"></input>
+	    <button type="submit" class="btn btn-default">
+	      Wait
+	    </button>
+	  </form>
+	</div>
+      </div>
+      <div class="col-md-4"></div>
+
   
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
