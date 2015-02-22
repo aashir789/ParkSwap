@@ -1,6 +1,6 @@
 var map = null;
-var lat = 44.434596;
-var lng = 26.080533;
+var lat = 40.769723;
+var lng = -73.963051;
 var randomMultiplier = 20;
 
 function initialize() {
