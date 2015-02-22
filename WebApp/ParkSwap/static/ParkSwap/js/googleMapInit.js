@@ -84,16 +84,24 @@ function initialize() {
     };
 
 
-
+    var iw = new google.maps.InfoWindow({
+       content: content
+    });
+    google.maps.event.addListener(marker, "click", function (e) {
+        iw.open(map, marker);
+    });
 }
 
 function addStaticMarker(laglng, name){
+
     if (!laglng) {
         laglng = map.getCenter();
     }
     var marker = new google.maps.Marker({
         position: laglng,
-        map: map
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: "static/ParkSwap/images/markerPrice2.gif"
     });
 
     var content = '<p>' + name + ' has a free spot here in ' + Math.floor(Math.random() * 10) + ' minute(s).</p>' +
@@ -120,6 +128,7 @@ function addMarker(laglng, name){
     });
 
     var iw = new google.maps.InfoWindow({
+
 	   content: (name + " has a free spot here in " + Math.floor(Math.random() * 10) + " minute(s).")
     });
     google.maps.event.addListener(marker, "click", function (e) { iw.open(map, this); });

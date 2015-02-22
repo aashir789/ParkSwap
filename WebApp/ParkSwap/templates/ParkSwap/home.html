@@ -1,93 +1,89 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  {% load staticfiles %}
-  <meta charset="utf-8">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
 
-  <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <style>
-    #googleMap {
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-    }
-  </style>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src='static/ParkSwap/js/googleMapInit.js'></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <style>
+      #googleMap {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      top:130px;
+      bottom: 0;
 
-</head>
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="static/ParkSwap/js/googleMapInit.js"></script>
+
+  </head>
 
 
 
-<body onload="initialize()" class="text-center">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">ParkSwap </a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse text-right">
-	<b>Welcome, Adam</b>
-      </div>
-    </div>
-  </nav>
+  <body onload="initialize()" class="text-center">
 
-  <div class="jumbotron">
-    <div class="container-fluid">
-      <h2 class="jumbotron text-center">
-        ParkSwap
-
-      </h2>
-      <div class="row" >
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
-	  <div class="list-group-item">
-	    <a>Search a Parking Space</a>
-    </div>
-	</div>
-	<div class="col-md-4"></div>
-      </div>
-
-      <br/>
-
-      <div class="row" >
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
-	  <div class="list-group-item">
-	    <a>Wait for a new Parker</a>
-	  </div>
-	</div>
-	<div class="col-md-4"></div>
-      </div>
-      <br/>
-    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">ParkSwap </a>
   </div>
+      </div>
+    </nav>
 
 
-  <div class="row" >
-  </div>
-
-  <div class="container">
-    <div class="text-center">
-
-    </div>
     <section id="googleMap"></section>
+    <div class="row">
+      <div class="list-group-item">
+  <h2>
+    Welcome, Adam.
+  </h2>
+      </div>
+      <br/>
+      <div class="row" >
+  <div class="col-md-4 col-xs-2" ></div>
+  <div class="col-md-4 col-xs-8">
+    <div class="list-group-item">
+      <a>Search a Parking Space</a>
+    </div>
   </div>
+  <div class="col-md-4 col-xs-2"></div>
+      </div>
+
+      <br/>
+
+      <div class="row" >
+  <div class="col-md-4 col-xs-2"></div>
+  <div class="col-md-4 col-xs-8">
+    <div class="list-group-item">
+      <a href="{% url 'wait' %}">Wait for a new Parker</a>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-2"></div>
+      </div>
+      <br/>
+    </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
-</body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
+  </body>
 </html>
