@@ -236,7 +236,7 @@ function initializeAccepted() {
     var randomAddonLng = (Math.random() - 0.5) / 80;
     
     var laglng1 = new google.maps.LatLng(lat + randomAddonLat, lng + randomAddonLng);
-    addStaticMarker(laglng1, "Aashir");
+    addMarker(laglng1, "Aashir");
 
     var laglng2 = new google.maps.LatLng(lat, lng);
     addCarMarker(laglng2, "Aashir");
