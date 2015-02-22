@@ -22,10 +22,10 @@ video#gif-mp4 {
 
 @media screen and (max-device-width: 800px) {
     #no-sign-up-home {
-        background: url(polina.jpg) #000 no-repeat center center fixed;
+        background: url(../ParkSwap/images/uber-front.jpg) #000 no-repeat center center fixed;
+        background-size: cover;
     }
     #gif-mp4 {
         display: none;
     }
 }
-

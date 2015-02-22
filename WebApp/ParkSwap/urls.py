@@ -5,7 +5,6 @@ urlpatterns = patterns('',
     url(r'^search$', 'ParkSwap.views.search', name='search'),
     url(r'^wait$', 'ParkSwap.views.wait', name='wait'),
     url(r'^sign-up$', 'ParkSwap.views.sign_up', name='signedup'),
-    url(r'^login$', 'django.contrib.auth.views.login', {'template_name':'ParkSwap/login.html'}, name='login')
-
-
+    url(r'^login$', 'django.contrib.auth.views.login', {'template_name':'ParkSwap/login.html'}, name='login'),
+    url(r'^accepted-parking$', 'ParkSwap.views.accepted_parking', name='acceptedparking')
 )
