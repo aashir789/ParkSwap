@@ -64,7 +64,7 @@
 
 
     <style>
-      #waitingform,#thankyou,#confirmpopup{
+      #waitingform,#thankyou{
       background-color: rgba(256,256,256,0.8);
       text: center;
       }
@@ -76,55 +76,30 @@
     <div class="col-md-4 col-xs-1"></div>
     <div class="col-md-4 col-xs-10" id="waitingform">
       <b>
-       	<br/>
-	Location rate : $0.50/min
-	<div class="form-control-wrapper">
-	  <input type="number" class="form-control text-center" placeholder="minutes willing to wait"></input>
-	  <span class="material-input"></span>
-	</div>
-	<button onclick="markSpot() " class="btn btn-inverse">Wait</button>
+       	  <br/>
+	  
+	  <div class="form-control-wrapper">
+	    <input type="number" class="form-control text-center" placeholder="minutes willing to wait"></input>
+	    <span class="material-input"></span>
+	  </div>
+	  <button onclick="markSpot() " class="btn btn-inverse">Wait</button>
       </b>
     </div>
-    
+   
     <div class="col-md-4 col-xs-10 text-center" id="thankyou" hidden>
       <b>
        	<br/><h2>
-	  Thanks for holding a spot ! :)
-	  <br/>
-	  You will be notified if someone wants this spot.
-	  <br/>
+	Thanks for holding a spot ! :)
+	<br/>
+	You will be notified if someone wants this spot.
+	<br/>
 	</h2>
       </b>
     </div>
-    
-    
-    <div class="col-md-4 col-xs-10 text-center" id="confirmpopup" hidden>
-      <b>
-       	<br/><h2>
-	  Adam had requested for your spot
-	  <br/>
-	  
-	  <br/>
-	</h2>
-      </b>
-    </div>
-    
-    
-    
-    
-
     
     
     <div class="col-md-4 col-xs-1"></div>
     
-    
-    
-
-
-
-
-
-
 
     <script>
       function markSpot(){
@@ -133,19 +108,6 @@
       $("#thankyou").show();
       }
     </script>
-    
-    
-    <script>
-      $( "#thankyou" ).click(function() {
-      $("#thankyou").hide();
-      $("#confirmpopup").show();
-      initializeAccepted(); 
-      
-      });
-    </script>
-
-
-
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
