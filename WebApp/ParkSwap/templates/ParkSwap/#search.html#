@@ -30,7 +30,7 @@
   
 
   
-  <body onload="initialize(1)">
+  <body onload="initialize()">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
 	<div class="navbar-header">
@@ -56,7 +56,7 @@
     
     
     <style>
-      #searchbar,#nearestshow{
+      #searchbar{
       background-color: rgba(256,256,256,0.8);
       text: center;
       }
@@ -73,38 +73,32 @@
     <div class="row">
       <div class="col-md-4 col-xs-1"></div>
       <div class="col-md-4 col-xs-6 text-center" id="searchbar">
-	<br/>
-	<div class="form-control-wrapper">
-	  <div class="icon-preview"><i class="mdi-action-search"> Search Address</i>
+	<div class="list-group-item" >
+	  <div class="form-control-wrapper">
+	    <div class="icon-preview"><i class="mdi-action-search"> Search Address</i>
 	      <input type="text" class="form-control text-center" placeholder="Blank if you want to use GPS location">
 	      <span class="material-input"></span>
+	    </div>
 	  </div>
-	</div>
-	<br/>
-	Time to get spot
-	<div class="form-control-wrapper">
-	  <input type="number" class="form-control text-center" placeholder="minutes"></input>
-	  <span class="material-input"></span>
-	</div>
-	<button class="btn btn-inverse btn-sm" onClick="search()">Search</button>
-      </div>    
-    
-    
+	    <br/>
+	    Time to get spot
+	    <div class="form-control-wrapper">
+	      <input type="number" class="form-control text-center" placeholder="minutes"></input>
+	      <span class="material-input"></span>
+	    </div>
+	    <button class="btn btn-inverse btn-sm" onClick="search()">Search</button>
+	</div>    
+      </div>
+      
 
       <div class="col-md-4 col-xs-6 text-center" id="nearestshow" hidden>
-	<br/>
-	Search results:
-	<br/>
-	<br/>
-	<div class="well">
-	  The nearest spot is <b>10 mins</b> away and waiting for <b>15 mins</b>
-	</div>
-	<div class="well">
-	  The nearest spot is <b>2 mins</b> away and waiting for <b>10 mins</b>
-	</div>  
-	<button class="btn btn-inverse btn-sm" onClick="confirmsearch()">Confirm to pay</button>
-      </div>    
-      
+	<div class="list-group-item "  >
+	  Search results:
+	  <div class="well">
+	    
+	  <button class="btn btn-inverse btn-sm" onClick="">Confirm to pay</button>
+	</div>    
+      </div>
       
 
       
@@ -119,16 +113,6 @@
 	$("#searchbar").hide();
 	$("#nearestshow").show();
 	map.setZoom(18);
-	}
-      </script>
-
-
-      
-      <script>
-	function confirmsearch(){
-	$("#nearestshow").hide();
-	map.setZoom(18);
-	initialize();
 	}
       </script>
 
