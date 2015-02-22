@@ -106,7 +106,8 @@ function addStaticMarker(laglng, name){
     });
 
     var content = '<p>' + name + ' has a free spot here in ' + Math.floor(Math.random() * 10) + ' minute(s).</p>' +
-    '<a href='+' "/accepted-parking" '+  ">Confirm</a>";
+    '<div style="text-align:center"><form action="/accepted-parking" method="GET"><button class="btn btn-inverse btn-sm" type="submit">Confirm</button></form></div>'
+    //'<div style="text-align:center"><a href='+' "/accepted-parking" '+  ">Confirm</a></div>";
 
 
     var iw = new google.maps.InfoWindow({

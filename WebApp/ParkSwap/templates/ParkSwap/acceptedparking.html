@@ -22,9 +22,85 @@
     top: 0; 
     bottom: 0; 
     }
+
+    .rate_widget {
+        border:     1px solid #CCC;
+        overflow:   visible;
+        padding:    10px;
+        position:   relative;
+        width:      190px;
+        height:     32px;
+    }
+    .ratings_stars {
+        background: url('static/ParkSwap/images/star_empty.png') no-repeat;
+        float:      left;
+        height:     28px;
+        padding:    2px;
+        width:      32px;
+    }
+    .ratings_vote {
+        background: url('static/ParkSwap/images/star_full.png') no-repeat;
+    }
+    .ratings_over {
+        background: url('static/ParkSwap/images/star_highlight.png') no-repeat;
+    }
+    .total_votes {
+        background: #eaeaea;
+        top: 58px;
+        left: 0;
+        padding: 5px;
+        position:   absolute;  
+    } 
+    .movie_choice {
+        font: 10px verdana, sans-serif;
+        margin: 0 auto 0 auto;
+        width: 180px;
+    }
   </style>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src='static/ParkSwap/js/googleMapInit.js'></script>
+  <script>
+
+    // This is the first thing we add ------------------------------------------
+    $(document).ready(function() {
+        
+        $('.ratings_stars').hover(
+            // Handles the mouseover
+            function() {
+                $(this).prevAll().andSelf().addClass('ratings_over');
+                $(this).nextAll().removeClass('ratings_vote'); 
+            },
+            // Handles the mouseout
+            function() {
+                $(this).prevAll().andSelf().removeClass('ratings_over');
+                // can't use 'this' because it wont contain the updated data
+                set_votes($(this).parent());
+            }
+        );
+        
+        
+        // This actually records the vote
+        $('.ratings_stars').bind('click', function() {
+            var star = this;
+            var widget = $(this).parent();
+            
+            var clicked_data = {
+                clicked_on : $(star).attr('class'),
+                widget_id : $(star).parent().attr('id')
+            };
+            $.post(
+                'ratings.php',
+                clicked_data,
+                function(INFO) {
+                    widget.data( 'fsr', INFO );
+                    set_votes(widget);
+                },
+                'json'
+            ); 
+        });
+    });
+
+    </script>
 
 </head>
 
@@ -69,6 +145,20 @@
 	  </br>
 	  <button class="btn btn-inverse btn-sm">Call</button>
 	  <button class="btn btn-inverse btn-sm" >Text</button>
+    <br>
+    <b>Rate Adam  </b>
+    <div class='movie_choice'>
+        <div id="r1" class="rate_widget">
+            <div class="star_1 ratings_stars"></div>
+            <div class="star_2 ratings_stars"></div>
+            <div class="star_3 ratings_stars"></div>
+            <div class="star_4 ratings_stars"></div>
+            <div class="star_5 ratings_stars"></div>
+        </div>
+    </div>
+    <button class="btn btn-inverse btn-sm">Got Your Spot</button>
+    <button class="btn btn-inverse btn-sm">Didn't Get Spot</button>
+
 	</div>    
       </div>
       
