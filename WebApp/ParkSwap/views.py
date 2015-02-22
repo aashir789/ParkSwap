@@ -20,18 +20,18 @@ from django.db import transaction
 
 def home(request):
 
-    return render(request,'ParkSwap/home.html',{})
+    return render(request,'ParkSwap/home.html',{'user':request.user})
 
-def logged_in(request):
-    return render(request, 'ParkSwap/logged-in-home.html',{})
+
+def search(request):
+    return render(request, 'ParkSwap/search.html',{})
 
 
 
 def wait(request):
     return render(request, 'ParkSwap/waitfornewparker.html',{})
 
+
 def sign_up(request):
     return render(request, 'ParkSwap/sign-up.html',{})
 
-def no_signup_home(request):
-    return render(request, 'ParkSwap/no-sign-up-home.html', {})
