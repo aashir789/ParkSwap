@@ -1,106 +1,83 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  {% load staticfiles %}
-  <meta charset="utf-8">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <style>
+      #googleMap {
+      width: 100%;
+      position: absolute;
+      left: 0; 
+      right: 0; 
+      z-index: 0;
+      top:50px; 
+      bottom: 0; 
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src='static/ParkSwap/js/googleMapInit.js'></script>
+    
+  </head>
+  
+  
 
-  <link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
-
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <style>
-    #googleMap {
-    width: 100%;
-    position: absolute;
-    left: 0; 
-    right: 0; 
-    z-index: 0;
-    top: 0; 
-    bottom: 0; 
-    }
-  </style>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src='static/ParkSwap/js/googleMapInit.js'></script>
-
-</head>
-
-
-
-<body onload="initialize()" class="text-center">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <body onload="initialize()" class="text-center">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+	<div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">ParkSwap </a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <div id="navbar" class="navbar-collapse collapse text-right">
+	    <b>Welcome, Adam</b>
+	  </div>
+	</div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    
+    
+    <div class="row" >
+    </div>
+    
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">ParkSwap </a>
+      <div class="text-center">
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-      </div><!--/.navbar-collapse -->
+      <section id="googleMap"></section>
     </div>
-  </nav>
-  
-  <div class="jumbotron">
-    <div class="container-fluid">
-      <h2 class="jumbotron text-center">
-        ParkSwap
-      </h2>
-      
-      <br/>
+
+    <br/><br/><br/><br/><br/><br/>
+    
+    <div class="col-md-4 col-xs-1"></div>
+    <div class="col-md-4 col-xs-10">
+      <div class="list-group-item">
+	Location rate : $0.50/min
+	<form>
+	  <input type="number" class="form-control floating-label text-center" placeholder="minutes willing to wait"></input>
+	  <button type="submit" class="btn btn-inverse">Wait</button>
+	</form>
     </div>
-  </div>
-  
-  
-  <div class="row" >
-  </div>
-  
-  <div class="container">
-    <div class="text-center">
-      
     </div>
-    <section id="googleMap">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-	<div class="list-group-item">
-	  Location rate : $0.50/min <br/>
-	  <form>
-	    <input type="number" class="form-control floating-label" placeholder="minutes willing to wait"></input>
-	    <button type="submit" class="btn btn-default">
-	      Wait
-	    </button>
-	  </form>
-	</div>
-      </div>
-      <div class="col-md-4"></div>
-      
-    </section>
-  </div>
-
-
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-	<div class="list-group-item">
-	  Location rate : $0.50/min <br/>
-	  <form>
-	    <input type="number" class="form-control floating-label" placeholder="minutes willing to wait"></input>
-	    <button type="submit" class="btn btn-default">
-	      Wait
-	    </button>
-	  </form>
-	</div>
-      </div>
-      <div class="col-md-4"></div>
-
-  
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
-</body>
+    <div class="col-md-4 col-xs-1"></div>
+    
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
+  </body>
 </html>
